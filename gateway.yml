@@ -10,7 +10,7 @@ spring:
         predicates:
         - Path=/srva/**
         filters:
-        - RewritePath=/(?<segment>.*), /$\{segment}
+        - RewritePath=/srva/(?<segment>.*), /$\{segment}
         - name: Hystrix
           args:
             name: monitor-srvA
@@ -45,4 +45,3 @@ management:
     web:
       exposure:
         include: hystrix.stream, info, health
-     
